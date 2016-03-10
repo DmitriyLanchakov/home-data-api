@@ -1,4 +1,46 @@
 from django.db import models
+from geopy.geocoders import GoogleV3
+
+FOR_SALE = 'F'
+SOLD = 'S'
+LISTING_OPTIONS = ((FOR_SALE, 'For Sale'), (SOLD, 'Sold'))
+
+METRIC = 'M'
+IMPERIAL = 'I'
+UNITS_OPTIONS = ((METRIC, 'metric'), (IMPERIAL, 'imperial'))
+
+
+class Property(models.Model):
+    """ A Property object representing a snapshot of a property at a point in
+    time.
+
+    A given physical residence may be represented multiple times if one of its
+    properties changes. For example if a property is sold a second time at a new
+    price.
+    """
+    upload_timestamp = models.DateTimeField(auto_now=True)
+    
+    listing_timestamp = models.DateTimeField()
+    listing_type = models.CharField(max_length=1, choices=LISTING_OPTIONS)
+
+    price = models.FloatField()
+
+    bedrooms = models.FloatField(blank=True, null=True)
+    bathrooms = models.FloatField(blank=True, null=True)
+    car_spaces = models.FloatField(blank=True, null=True)
+
+    building_size = models.FloatField(blank=True, null=True)
+    land_size = models.FloatField(blank=True, null=True)
+    size_units = models.CharField(max_length=1, choices=UNITS_OPTIONS)
+
+    raw_address = models.CharField(max_length=512)
+    geocoded_address = models.CharField(max_length=512)
+
+    def save(self, *args, **kwargs):
+        encoder = GoogleV3()
+        location = encoder.geocode(self.raw_address)
+        self.geocoded_address = location.address
+        super(Property, self).save(*args, **kwargs)
 
 
 class SimpleProperty(models.Model):
