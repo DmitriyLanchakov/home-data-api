@@ -36,12 +36,25 @@ class Property(models.Model):
     raw_address = models.CharField(max_length=512)
     geocoded_address = models.CharField(max_length=512)
 
+    features = models.ManyToManyField('Feature', blank=True)
+
     def save(self, *args, **kwargs):
         encoder = GoogleV3()
         location = encoder.geocode(self.raw_address)
         self.geocoded_address = location.address
         super(Property, self).save(*args, **kwargs)
 
+
+class Feature(models.Model):
+    """ A boolean feature of a Property
+    
+    For things which a property may or may not have (eg a garden).
+    """
+    category = models.CharField(max_length=100)
+    tag = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.category) + ":" + str(self.tag)
 
 class SimpleProperty(models.Model):
     """ A (very) simple property model
