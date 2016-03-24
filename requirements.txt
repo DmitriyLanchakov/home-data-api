@@ -7,3 +7,4 @@ geopy==1.11.0
 gunicorn==19.4.5
 psycopg2==2.6.1
 wheel==0.24.0
+whitenoise==3.0
