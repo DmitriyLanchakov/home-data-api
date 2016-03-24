@@ -1,0 +1,556 @@
+Listing Number,12345
+Agent Days On Market,66
+Co-listing Member,John Doe
+Co-selling Member,Jane Doe
+Cumulative DOM,66
+Listing Member,Mr. Smith
+Listing Office,Smith Realty
+Property Type,Residential
+Selling Member,Jane Doe
+Selling Office,Smith Realty
+# Bedrooms,3
+3rd Party,N
+Acreage Range,0 - 0.5
+Acres,0.25
+Approximate Age,1 - 3 Years
+Area,M5
+Assn Fee,Required
+Assn Fee $,292
+Assn Fee Terms,Quarterly
+Back on Market Date,
+Baths - 1/2,1
+Baths - Full,2
+Bonus,N
+Builder,Bob The Builder
+Buyer Name,Tom Brown
+Cancel Date,
+City,Utopia
+Compensation,3%-$150
+Concessions,5000
+Concessions Notes,Seller Paid Closing
+Contingency Notes,Upon Buyer's Home Sale
+Contingent,Y
+Dir,
+Directions,"From Main Street, turn north on First Street, left in 5 blocks on Pecan, house third on right."
+Dual/Var,N
+Elementary School,John Smith Elementary
+Expiration Date,
+High School,Great Man High School
+Interest Rate,
+Legal Desc,Lot 33 of Village
+Lender,Community Bank
+Limited Service,N
+List Price/SqFt,228.72
+List Type,Excl Right
+Listing Date,2016-01-04
+Listing Price,645000
+Loan Term,30 Year
+Lot #,33
+Lot Dimensions,50x100
+Middle School,Next Step Middle School
+Mineral Rights,Conveyed/Reserved/Partial
+Model Name,
+Occupied By,Owner/Vacant/Tenant
+Original List Price,645000
+Parish-County,Midland
+Pool,N
+Projected Closing Date,42491
+Realtor Remarks,Lockbox on house.  Call to schedule showing.
+Remarks,Really flowery writing here
+REO,Y/N
+Seller Name,
+Seller Phone,
+Sold Date,
+Sold Price,
+Sold Price/SqFt,
+Sold Terms,
+SqFt - Carport,
+SqFt - Covered Porch,513
+SqFt - Garage,792
+SqFt - Living,2820
+SqFt - Lower,1990
+SqFt - Source,Owner
+SqFt - Storage,41
+SqFt - Total,
+SqFt - Upper,830
+St Suffix,Street
+State,LA
+Status,A
+Status Change Date,2016-01-04
+Stories,2
+Street Name,Pecan
+Street Number,105
+Sub-Type,
+Subdivision,Village
+Tax Assessment Number,3102012
+Temp Off Market Date,
+Terms of Bonus,"$3,000 Bonus to Selling Agency with reasonable offer."
+Total Baths,2.1
+Type,DS
+Type of Sale,
+Under Contract Date,
+Unit #,
+Use CSS,Y
+Warranty,
+Year Built,
+Zip Code,5010
+Zone,
+Amenities: Acreage,Y/N
+Amenities: Club House,Y/N
+Amenities: Community Pool,Y/N
+Amenities: Elevator,Y/N
+Amenities: Gated Community,Y/N
+Amenities: Golf Course,Y/N
+Amenities: Health Club,Y/N
+Amenities: Library,Y/N
+Amenities: Medical Facility,Y/N
+Amenities: Other,Y/N
+Amenities: Park,Y/N
+Amenities: Playground,Y/N
+Amenities: Public Trans,Y/N
+Amenities: Shopping/Mall,Y/N
+Amenities: Tennis Court,Y/N
+Appliances: Compactor,Y/N
+Appliances: Cooktop - Electric,Y/N
+Appliances: Cooktop - Gas,Y/N
+Appliances: Dishwasher,Y/N
+Appliances: Disposal,Y/N
+Appliances: Dryer,Y/N
+Appliances: Freezer,Y/N
+Appliances: Ice Machine,Y/N
+Appliances: Indoor Grill,Y/N
+Appliances: Microwave,Y/N
+Appliances: None,Y/N
+Appliances: Other,Y/N
+Appliances: Range/Oven,Y/N
+Appliances: Refrigerator,Y/N
+Appliances: Wall Oven,Y/N
+Appliances: Washer,Y/N
+Appliances: Water Softener,Y/N
+Approximate Age: 11 - 15 Years,Y/N
+Approximate Age: 16 - 20 Years,Y/N
+Approximate Age: 21 - 30 Years,Y/N
+Approximate Age: 31 - 40 Years,Y/N
+Approximate Age: 41 - 50 Years,Y/N
+Approximate Age: 51 - 75 Years,Y/N
+Approximate Age: 76+ Years,Y/N
+Construction: Block,Y/N
+Construction: Brick,Y/N
+Construction: Concrete,Y/N
+Construction: Frame,Y/N
+Construction: Log,Y/N
+Construction: Metal,Y/N
+Construction: Other,Y/N
+Cooling: 2 or More Units,Y/N
+Cooling: Central Air,Y/N
+Cooling: Heat Pump,Y/N
+Cooling: None,Y/N
+Cooling: Other,Y/N
+Cooling: Wall Units,Y/N
+Cooling: Window Units,Y/N
+Cooling: Zoned,Y/N
+Countertops: Butcher Block,Y/N
+Countertops: Concrete,Y/N
+Countertops: Copper,Y/N
+Countertops: Cultured Marble,Y/N
+Countertops: Formica,Y/N
+Countertops: Granite,Y/N
+Countertops: Granite Tile,Y/N
+Countertops: Marble,Y/N
+Countertops: Other,Y/N
+Countertops: Quartz,Y/N
+Countertops: Solid Surface,Y/N
+Countertops: Stainless Steel,Y/N
+Countertops: Tile,Y/N
+Equipment: Attic Fan,Y/N
+Equipment: Cable Available,Y/N
+Equipment: Cable Ready,Y/N
+Equipment: Ceiling Fans,Y/N
+Equipment: Cent Vacuum,Y/N
+Equipment: Garage Door Opener,Y/N
+Equipment: Garden Tub,Y/N
+Equipment: Hot Tub,Y/N
+Equipment: Humidifier,Y/N
+Equipment: Intercom,Y/N
+Equipment: Other,Y/N
+Equipment: Sauna/Steam,Y/N
+Equipment: Sec Sys Leased,Y/N
+Equipment: Sec Sys Owned,Y/N
+Equipment: Sec Sys Pre-Wired Only,Y/N
+Equipment: Security System,Y/N
+Equipment: Separate Shower,Y/N
+Equipment: Smoke Detector,Y/N
+Equipment: Water Filter,Y/N
+Equipment: Whirlpool,Y/N
+Exterior: Balcony,Y/N
+Exterior: Barn,Y/N
+Exterior: Cabana,Y/N
+Exterior: Deck,Y/N
+Exterior: Gas/Propane Grill,Y/N
+Exterior: Gazebo,Y/N
+Exterior: Hot Tub,Y/N
+Exterior: Kennel,Y/N
+Exterior: Landscaped,Y/N
+Exterior: Other,Y/N
+Exterior: Outside Kitchen,Y/N
+Exterior: Outside Light,Y/N
+Exterior: Porch,Y/N
+Exterior: Rear Yard Access,Y/N
+Exterior: Sprinkler System,Y/N
+Exterior: Storage Shed/Building,Y/N
+Exterior: Storm Doors,Y/N
+Exterior: Storm Windows,Y/N
+Exterior: Workshop,Y/N
+Fencing: Barb Wire,Y/N
+Fencing: Brick,Y/N
+Fencing: Chain Link,Y/N
+Fencing: Full,Y/N
+Fencing: None,Y/N
+Fencing: Other,Y/N
+Fencing: Partial,Y/N
+Fencing: Privacy,Y/N
+Fencing: Rail,Y/N
+Fencing: Vinyl,Y/N
+Fencing: Wood,Y/N
+Financing: Assumable,Y/N
+Financing: Bond for Deed,Y/N
+Financing: Cash,Y/N
+Financing: Conventional,Y/N
+Financing: FHA,Y/N
+Financing: Lease Purchase,Y/N
+Financing: None,Y/N
+Financing: Owner Finance,Y/N
+Financing: Private Banking,Y/N
+Financing: Rural Development,Y/N
+Financing: See Remarks,Y/N
+Financing: Trade/Exchange,Y/N
+Financing: VA,Y/N
+Fireplace: 1 Fireplace,Y/N
+Fireplace: 2 Fireplaces,Y/N
+Fireplace: 3+ Fireplaces,Y/N
+Fireplace: Double Sided,Y/N
+Fireplace: Gas Logs,Y/N
+Fireplace: Masonry,Y/N
+Fireplace: Other,Y/N
+Fireplace: Pre-Fab,Y/N
+Fireplace: Ventless,Y/N
+Fireplace: Wood Burning,Y/N
+Flooring: Brick,Y/N
+Flooring: Carpet,Y/N
+Flooring: Concrete,Y/N
+Flooring: Laminate,Y/N
+Flooring: Marble,Y/N
+Flooring: Other,Y/N
+Flooring: Pavers,Y/N
+Flooring: Slate,Y/N
+Flooring: Stained/Scored Concrete,Y/N
+Flooring: Tile,Y/N
+Flooring: Vinyl Sheet,Y/N
+Flooring: Vinyl Tile,Y/N
+Flooring: Wood,Y/N
+Flooring: Wood Laminate,Y/N
+Foundation: Other,Y/N
+Foundation: Piers,Y/N
+Foundation: Piling/Stilt,Y/N
+Foundation: Post Tension,Y/N
+Foundation: Slab,Y/N
+Heating: 2 or More Units,Y/N
+Heating: Central Heat,Y/N
+Heating: Electric,Y/N
+Heating: Gas,Y/N
+Heating: Heat Pump,Y/N
+Heating: Other,Y/N
+Heating: Space Heater,Y/N
+Heating: Wall Units,Y/N
+Heating: Zoned,Y/N
+HOA Includes: Accounting,Y/N
+HOA Includes: Advertising,Y/N
+HOA Includes: Cable TV,Y/N
+HOA Includes: Electricity,Y/N
+HOA Includes: Gas,Y/N
+HOA Includes: Ground Keeping,Y/N
+HOA Includes: Insurance,Y/N
+HOA Includes: Legal,Y/N
+HOA Includes: Licenses/Permit,Y/N
+HOA Includes: Management,Y/N
+HOA Includes: Other - See Remarks,Y/N
+HOA Includes: Other Utilities,Y/N
+HOA Includes: Pest Control,Y/N
+HOA Includes: Pool,Y/N
+HOA Includes: Recreation Facilities,Y/N
+HOA Includes: Repairs/Maintenance,Y/N
+HOA Includes: Services,Y/N
+HOA Includes: Sewer,Y/N
+HOA Includes: Supplies,Y/N
+HOA Includes: Taxes,Y/N
+HOA Includes: Telephone,Y/N
+HOA Includes: Trash Disposal,Y/N
+HOA Includes: Water,Y/N
+Interior: 9+ Ft Ceiling,Y/N
+Interior: All Window Treatments,Y/N
+Interior: Attic Access,Y/N
+Interior: Beamed Ceiling,Y/N
+Interior: Bookcase,Y/N
+Interior: Built-Ins,Y/N
+Interior: Computer Nook,Y/N
+Interior: Crown Molding,Y/N
+Interior: Electric Dryer Con,Y/N
+Interior: Electric Stove Con,Y/N
+Interior: Electric Washer Con,Y/N
+Interior: Gas Dryer Con,Y/N
+Interior: Gas Stove Con,Y/N
+Interior: Handicap Acc,Y/N
+Interior: Icemaker Con,Y/N
+Interior: Master Bath,Y/N
+Interior: Multi-Head Shower,Y/N
+Interior: Other,Y/N
+Interior: Separate Shower,Y/N
+Interior: Skylight,Y/N
+Interior: Some Window Treatments,Y/N
+Interior: Special Bath,Y/N
+Interior: Varied Ceiling Heights,Y/N
+Interior: Vaulted Ceilings,Y/N
+Interior: Walk-in Closet,Y/N
+Interior: Wet Bar,Y/N
+Lot: Additional Land Available,Y/N
+Lot: Commons,Y/N
+Lot: Corner,Y/N
+Lot: Cul-De-Sac,Y/N
+Lot: Dead-End,Y/N
+Lot: Easements,Y/N
+Lot: Flood Plain,Y/N
+Lot: Golf Course Frontage,Y/N
+Lot: Level,Y/N
+Lot: No Outlet Street,Y/N
+Lot: Other,Y/N
+Lot: Sloping,Y/N
+Lot: Views,Y/N
+Lot: Water Frontage,Y/N
+Lot: Wooded,Y/N
+Lot: Zero Lot Line,Y/N
+Lst Agt/Ofc will NOT: LA/LO will NOT Accept and Present Offers,Y/N
+Lst Agt/Ofc will NOT: LA/LO will NOT Advise the seller on PA?s,Y/N
+Lst Agt/Ofc will NOT: LA/LO will NOT Arrange Appointments,Y/N
+Lst Agt/Ofc will NOT: LA/LO will NOT Assist seller in counteroffers,Y/N
+Lst Agt/Ofc will NOT: LA/LO will NOT Negotiate for the seller,Y/N
+Miscellaneous: Fixer-Upper,Y/N
+Miscellaneous: Guest House,Y/N
+Miscellaneous: Horse Property,Y/N
+Miscellaneous: Other - See Remarks,Y/N
+Parking: 1 Car Carport,Y/N
+Parking: 1 Car Garage,Y/N
+Parking: 2 Car Carport,Y/N
+Parking: 2 Car Garage,Y/N
+Parking: 3 Car Carport,Y/N
+Parking: 3 Car Garage,Y/N
+Parking: 4+ Car Carport,Y/N
+Parking: 4+ Car Garage,Y/N
+Parking: Assigned,Y/N
+Parking: Carport Rear,Y/N
+Parking: Garage Rear,Y/N
+Parking: No Parking,Y/N
+Parking: Open Parking,Y/N
+Parking: RV/Boat Port,Y/N
+Patio: Covered,Y/N
+Patio: Enclosed,Y/N
+Patio: Open,Y/N
+Patio: Screened,Y/N
+Pool: Above Ground,Y/N
+Pool: Community/Subdv,Y/N
+Pool: Fiberglass,Y/N
+Pool: Gunite,Y/N
+Pool: Inground,Y/N
+Pool: Lined,Y/N
+Reserved Item: Ceiling Fans,Y/N
+Reserved Item: Drapes,Y/N
+Reserved Item: Hot Tub/Spa,Y/N
+Reserved Item: Light Fixtures,Y/N
+Reserved Item: Microwave,Y/N
+Reserved Item: Mini-Blinds,Y/N
+Reserved Item: Mirrors,Y/N
+Reserved Item: Other - See Remarks,Y/N
+Reserved Item: Pool - Above Ground,Y/N
+Reserved Item: Pool Equipment,Y/N
+Reserved Item: Refrigerator,Y/N
+Reserved Item: Rods,Y/N
+Reserved Item: Satellite Dish,Y/N
+Reserved Item: Water Softener,Y/N
+Reserved Item: Window Unit,Y/N
+Roof: Asbestos,Y/N
+Roof: Built-Up,Y/N
+Roof: Comp Shingle,Y/N
+Roof: Metal,Y/N
+Roof: Other,Y/N
+Roof: Slate,Y/N
+Roof: Tile,Y/N
+Rooms: Bedroom - Additional,Y/N
+Rooms: Bedroom - Additional Level,Y/N
+Rooms: Bonus,Y/N
+Rooms: Bonus Level,Y/N
+Rooms: Breakfast,Y/N
+Rooms: Breakfast Level,Y/N
+Rooms: Breezeway,Y/N
+Rooms: Breezeway Level,Y/N
+Rooms: Carport,Y/N
+Rooms: Carport Level,Y/N
+Rooms: Darkroom,Y/N
+Rooms: Darkroom Level,Y/N
+Rooms: Den,Y/N
+Rooms: Den Level,Y/N
+Rooms: Dining Area,Y/N
+Rooms: Dining Area Level,Y/N
+Rooms: Dining Room,Y/N
+Rooms: Dining Room Level,Y/N
+Rooms: Dining/Kitchen,Y/N
+Rooms: Dining/Kitchen Level,Y/N
+Rooms: Dining/Living,Y/N
+Rooms: Dining/Living Level,Y/N
+Rooms: Eat-in-Kitchen,Y/N
+Rooms: Eat-in-Kitchen Level,Y/N
+Rooms: Exercise,Y/N
+Rooms: Exercise Level,Y/N
+Rooms: Family,Y/N
+Rooms: Family Level,Y/N
+Rooms: Florida,Y/N
+Rooms: Florida Room Level,Y/N
+Rooms: Formal Dining,Y/N
+Rooms: Formal Dining Level,Y/N
+Rooms: Foyer,Y/N
+Rooms: Foyer Level,Y/N
+Rooms: Full Bath,Y/N
+Rooms: Full Bath Level,Y/N
+Rooms: Garage,Y/N
+Rooms: Garage Level,Y/N
+Rooms: Great Room,Y/N
+Rooms: Great Room Level,Y/N
+Rooms: Greenhouse,Y/N
+Rooms: Greenhouse Level,Y/N
+Rooms: Half Bath,Y/N
+Rooms: Half Bath Level,Y/N
+Rooms: Hobby Room,Y/N
+Rooms: Hobby Room Level,Y/N
+Rooms: Keeping,Y/N
+Rooms: Keeping Level,Y/N
+Rooms: Kitchen,Y/N
+Rooms: Kitchen Level,Y/N
+Rooms: Laundry,Y/N
+Rooms: Laundry Level,Y/N
+Rooms: Living Room,Y/N
+Rooms: Living Room,Y/N
+Rooms: Master Bath,Y/N
+Rooms: Master Bath Level,Y/N
+Rooms: Master Bedroom,Y/N
+Rooms: Master Bedroom Level,Y/N
+Rooms: Mudroom,Y/N
+Rooms: Mudroom Level,Y/N
+Rooms: Nursery,Y/N
+Rooms: Nursery Level,Y/N
+Rooms: Office,Y/N
+Rooms: Office Level,Y/N
+Rooms: Other,Y/N
+Rooms: Other Level,Y/N
+Rooms: Pantry,Y/N
+Rooms: Pantry Level,Y/N
+Rooms: Playroom,Y/N
+Rooms: Playroom Level,Y/N
+Rooms: Rec-Game Room,Y/N
+Rooms: Rec-Game Room Level,Y/N
+Rooms: Retail Space,Y/N
+Rooms: Retail Space Level,Y/N
+Rooms: Separate Apartment,Y/N
+Rooms: Separate Apartment Level,Y/N
+Rooms: Sitting Room,Y/N
+Rooms: Sitting Room Level,Y/N
+Rooms: Storage,Y/N
+Rooms: Storage Level,Y/N
+Rooms: Sunroom,Y/N
+Rooms: Sunroom Level,Y/N
+Rooms: Utility Room,Y/N
+Rooms: Utility Room Level,Y/N
+Rooms: Workshop,Y/N
+Rooms: Workshop Level,Y/N
+Showing: 24 Hour Notice,Y/N
+Showing: Accompany,Y/N
+Showing: Appoint Required,Y/N
+Showing: Call Listing Office,Y/N
+Showing: CSS,Y/N
+Showing: Key in Office,Y/N
+Showing: LA Present,Y/N
+Showing: Leave Card,Y/N
+Showing: Lockbox,Y/N
+Showing: No Lockbox,Y/N
+Showing: Security System,Y/N
+Showing: Show Anytime,Y/N
+Showing: Sign in Required,Y/N
+Showing: Sign on Property,Y/N
+Siding: Aluminum,Y/N
+Siding: Asbestos Siding,Y/N
+Siding: Block,Y/N
+Siding: Brick,Y/N
+Siding: Hardiplank,Y/N
+Siding: Other,Y/N
+Siding: Stucco,Y/N
+Siding: Synthetic Stucco,Y/N
+Siding: Vinyl Siding,Y/N
+Siding: Wood,Y/N
+Style: Acadian,Y/N
+Style: Art Deco,Y/N
+Style: Colonial,Y/N
+Style: Contemporary,Y/N
+Style: Cottage,Y/N
+Style: Dome,Y/N
+Style: French,Y/N
+Style: Garden/Patio,Y/N
+Style: Log Cabin,Y/N
+Style: Mediterranean,Y/N
+Style: Modular,Y/N
+Style: New Orleans,Y/N
+Style: Other,Y/N
+Style: Ranch,Y/N
+Style: Shotgun,Y/N
+Style: Split Level,Y/N
+Style: Townhouse,Y/N
+Style: Traditional,Y/N
+Style: Tudor,Y/N
+Style: Victorian,Y/N
+Utilities: Elec: Beauregard Electric,Y/N
+Utilities: Elec: City,Y/N
+Utilities: Elec: CLECO,Y/N
+Utilities: Elec: Deep East,Y/N
+Utilities: Elec: DEMCO,Y/N
+Utilities: Elec: Entergy,Y/N
+Utilities: Elec: Generator,Y/N
+Utilities: Elec: Jeff-Davis Co-op,Y/N
+Utilities: Elec: Pt Coupee EMC,Y/N
+Utilities: Elec: SLECA,Y/N
+Utilities: Elec: SLEMCO,Y/N
+Utilities: Gas: Atmos,Y/N
+Utilities: Gas: Carencro Gas,Y/N
+Utilities: Gas: Centerpoint,Y/N
+Utilities: Gas: DEMCO,Y/N
+Utilities: Gas: Entergy,Y/N
+Utilities: Gas: Entex,Y/N
+Utilities: Gas: Private/Propane,Y/N
+Utilities: Gas: Pt Coupee EMC,Y/N
+Utilities: Gas: Reliant,Y/N
+Utilities: Gas: St Amant Gas,Y/N
+Utilities: Gas: TransLa,Y/N
+Water/Sewer: Comm Sewer,Y/N
+Water/Sewer: Comm Water,Y/N
+Water/Sewer: Indiv Water/Well,Y/N
+Water/Sewer: Mechan Sewer,Y/N
+Water/Sewer: Other,Y/N
+Water/Sewer: Public Sewer,Y/N
+Water/Sewer: Public Water,Y/N
+Water/Sewer: Retaining Pond,Y/N
+Water/Sewer: Septic,Y/N
+Water/Sewer: Waste Water Utility,Y/N
+Waterfront: Access,Y/N
+Waterfront: Bayou/River,Y/N
+Waterfront: Beach,Y/N
+Waterfront: Dock/Mooring,Y/N
+Waterfront: Frontage,Y/N
+Waterfront: Lake/Pond,Y/N
+Waterfront: Other,Y/N
+Waterfront: View,Y/N
+Waterfront: Walk To,Y/N
