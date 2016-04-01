@@ -1,15 +1,16 @@
-.. Data Skeptic Housing Data API documentation master file, created by
-   sphinx-quickstart on Thu Mar 24 14:53:24 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Data Skeptic Housing Data API's documentation!
-=========================================================
+Data Skeptic Housing API Documentation.
+=======================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
+
+   api
+   contributing
+
+   modules/models
+   modules/views
 
 
 
