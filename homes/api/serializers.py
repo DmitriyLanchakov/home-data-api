@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import SimpleProperty, Property, Feature
+from api.models import Property, Feature
 
 class PropertySerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,8 +13,3 @@ class FeatureSerializer(serializers.ModelSerializer):
         model = Feature
         fields = '__all__'
 
-
-class SimplePropertySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SimpleProperty
-        fields = '__all__'

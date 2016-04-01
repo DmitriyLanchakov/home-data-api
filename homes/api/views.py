@@ -1,18 +1,20 @@
 from django.shortcuts import render
-from api.serializers import SimplePropertySerializer, PropertySerializer, FeatureSerializer
-from api.models import SimpleProperty, Property, Feature
+from api.serializers import PropertySerializer, FeatureSerializer
+from api.models import Property, Feature
 from rest_framework import viewsets
 
-class SimplePropertyViewSet(viewsets.ModelViewSet):
-    queryset = SimpleProperty.objects.all()
-    serializer_class = SimplePropertySerializer
-
-
 class PropertyViewSet(viewsets.ModelViewSet):
+    """Allows the read and write of Property objects.
+
+    """
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
 
 
 class FeatureViewSet(viewsets.ModelViewSet):
+    """Allows the read and write of Feature objects.
+
+    """
+
     queryset = Feature.objects.all()
     serializer_class = FeatureSerializer
