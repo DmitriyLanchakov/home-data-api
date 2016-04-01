@@ -1,4 +1,4 @@
-from tweetvote.settings import *
+from homes.settings import *
 
 
 os.environ['HTTPS'] = ""
