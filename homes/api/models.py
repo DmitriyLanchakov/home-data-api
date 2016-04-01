@@ -17,6 +17,10 @@ class Property(models.Model):
     A given physical residence may be represented multiple times if one of its
     properties changes. For example if a property is sold a second time at a new
     price.
+
+    A property also contains a number of :class:`.Feature` objects which allow
+    the presence of optional things like a pool or a skylight which would 
+    otherwise crowd the number of fields in the mdoel.
     """
     upload_timestamp = models.DateTimeField(auto_now=True)
     
@@ -39,6 +43,12 @@ class Property(models.Model):
     features = models.ManyToManyField('Feature', blank=True)
 
     def save(self, *args, **kwargs):
+        """Save the model after geocoding the supplied address.
+
+        Here the address is geocoded using the Google geocoding service. 
+        This is limited to 2500 requests per day. There is no current system
+        to account for this so models over 2500 will not geocode.
+        """
         encoder = GoogleV3()
         location = encoder.geocode(self.raw_address)
         self.geocoded_address = location.address
@@ -56,14 +66,3 @@ class Feature(models.Model):
     def __str__(self):
         return str(self.category) + ":" + str(self.tag)
 
-class SimpleProperty(models.Model):
-    """ A (very) simple property model
-
-    Not named Property to make it easier to drop and replace with a real model.
-    """
-    address = models.CharField(max_length=512)
-    
-    bedrooms = models.FloatField()
-    bathrooms = models.FloatField()
-
-    price = models.FloatField()
