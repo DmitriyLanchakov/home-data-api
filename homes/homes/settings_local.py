@@ -1,5 +1,6 @@
 from homes.settings import *
 
+SECRET_KEY = '!0n!j@xhrmmspj0)l5^^d8utem*y*k-5*4jbb1x9p&wz6_h+ju'
 
 os.environ['HTTPS'] = ""
 
