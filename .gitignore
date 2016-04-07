@@ -1,5 +1,7 @@
+homes/homes/staticfiles
 venv/
 *.sqlite3
+*.db
 *.swp
 
 #

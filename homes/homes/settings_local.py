@@ -2,6 +2,8 @@ from homes.settings import *
 
 SECRET_KEY = '!0n!j@xhrmmspj0)l5^^d8utem*y*k-5*4jbb1x9p&wz6_h+ju'
 
+JWT_AUTH['JWT_SECRET_KEY'] = SECRET_KEY
+
 os.environ['HTTPS'] = ""
 
 SESSION_COOKIE_SECURE = False

@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from api.views import PropertyViewSet, FeatureViewSet
 from rest_framework import routers
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+
 
 router = routers.DefaultRouter()
 router.register(r'property', PropertyViewSet)
@@ -26,4 +28,7 @@ router.register(r'feature', FeatureViewSet)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
+    url(r'^token/auth/', obtain_jwt_token),
+    url(r'^token/refresh/', refresh_jwt_token),
+    url(r'^token/verify/', verify_jwt_token),
 ]
