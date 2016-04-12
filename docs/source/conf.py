@@ -26,6 +26,7 @@ from django.conf import settings
 import django
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'homes.settings'
+os.environ['DJANGO_SECRET_KEY'] = 'docskey'
 django.setup()
 
 # -- General configuration ------------------------------------------------
