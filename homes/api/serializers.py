@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Property, Feature
+from api.models import Property, Feature, Flag, Resolution
 
 class PropertySerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,3 +13,14 @@ class FeatureSerializer(serializers.ModelSerializer):
         model = Feature
         fields = '__all__'
 
+
+class FlagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feature
+        fields = '__all__'
+
+
+class ResolutionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Resolution
+        fields = '__all__'
