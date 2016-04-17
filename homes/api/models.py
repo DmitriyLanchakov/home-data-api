@@ -84,12 +84,24 @@ class Flag(models.Model):
     These flags are then resolved by a user with resolution rights. This
     may be a human or a bot.
     """
-    first_object = models.ForeignKey(Property)
-    second_object = models.ForeignKey(Property)
-    flag_type = models.Charfield(max_length=1, choices=FLAG_OPTIONS)
+    first_object = models.ForeignKey(Property, blank=True, 
+                                     null=True, related_name="first")
+    second_object = models.ForeignKey(Property, blank=True, 
+                                      null=True, related_name="second")
+    flag_type = models.CharField(max_length=1, choices=FLAG_OPTIONS)
     is_open = models.BooleanField(default=True)
     submitter = models.ForeignKey(settings.AUTH_USER_MODEL)
     date_submitted = models.DateTimeField(auto_now=True)
+
+    def is_valid(self):
+        """If a flag is still open it needs to point to two objects.
+        
+        Once it has been closed one or both of those objects may have
+        been removed.
+        """
+        if self.is_open:
+            return (self.first_object is not None) and (self.second_object is not None)
+        return True
 
 
 class Resolution(models.Model):

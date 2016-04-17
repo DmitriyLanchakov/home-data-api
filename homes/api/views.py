@@ -8,7 +8,6 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 class PropertyViewSet(viewsets.ModelViewSet):
     """Allows the read and write of Property objects.
-
     """
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
@@ -20,7 +19,6 @@ class PropertyViewSet(viewsets.ModelViewSet):
 class FeatureViewSet(viewsets.ModelViewSet):
     """Allows the read and write of Feature objects.
     """
-
     queryset = Feature.objects.all()
     serializer_class = FeatureSerializer
     permissions_classes = (IsAuthenticatedOrReadOnly,)
@@ -40,3 +38,5 @@ class ResolutionViewSet(viewsets.ModelViewSet):
     queryset = Resolution.objects.all()
     serializer_class = ResolutionSerializer
     permissions_classes = (IsAuthenticatedOrReadOnly,)
+
+
