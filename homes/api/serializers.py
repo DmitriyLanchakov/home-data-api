@@ -16,7 +16,7 @@ class FeatureSerializer(serializers.ModelSerializer):
 
 class FlagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Feature
+        model = Flag
         fields = '__all__'
 
 

@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from api.views import PropertyViewSet, FeatureViewSet
+from api.views import (PropertyViewSet, FeatureViewSet, FlagViewSet, 
+                       ResolutionViewSet)
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
@@ -23,7 +24,8 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 router = routers.DefaultRouter()
 router.register(r'property', PropertyViewSet)
 router.register(r'feature', FeatureViewSet)
-
+router.register(r'flag', FlagViewSet)
+router.register(r'resolution', ResolutionViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
