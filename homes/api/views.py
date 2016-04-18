@@ -4,14 +4,14 @@ from api.filters import PropertyFilter
 from api.models import (Property, Feature, Flag, Resolution)
 
 from rest_framework import viewsets, filters
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 
 class PropertyViewSet(viewsets.ModelViewSet):
     """Allows the read and write of Property objects.
     """
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
-    permissions_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = PropertyFilter
 
@@ -21,7 +21,7 @@ class FeatureViewSet(viewsets.ModelViewSet):
     """
     queryset = Feature.objects.all()
     serializer_class = FeatureSerializer
-    permissions_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 
 class FlagViewSet(viewsets.ModelViewSet):
@@ -29,7 +29,7 @@ class FlagViewSet(viewsets.ModelViewSet):
     """
     queryset = Flag.objects.all()
     serializer_class = FlagSerializer
-    permissions_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 
 class ResolutionViewSet(viewsets.ModelViewSet):
@@ -37,6 +37,6 @@ class ResolutionViewSet(viewsets.ModelViewSet):
     """
     queryset = Resolution.objects.all()
     serializer_class = ResolutionSerializer
-    permissions_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 
