@@ -50,7 +50,7 @@ class Property(models.Model):
     submitter = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     # So we can keep ones that get flagged as a reference
-    valid = models.BooleanField(default=False)
+    valid = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         """Save the model after geocoding the supplied address.
