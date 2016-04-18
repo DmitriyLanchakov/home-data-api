@@ -59,7 +59,7 @@ class Property(models.Model):
         This is limited to 2500 requests per day. There is no current system
         to account for this so models over 2500 will not geocode.
         """
-        if self.valid:
+        if self.valid and not settings.TESTING:
             encoder = GoogleV3()
             location = encoder.geocode(self.raw_address)
             self.geocoded_address = location.address

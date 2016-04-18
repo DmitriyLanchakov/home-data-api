@@ -28,6 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'INVALID')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+TESTING = False
 
 if os.environ.get('DJANGO_DEBUG'):
     DEBUG = True

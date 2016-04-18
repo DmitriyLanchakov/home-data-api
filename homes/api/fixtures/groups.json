@@ -1,0 +1,46 @@
+[
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "flagging",
+        "permissions": [
+            [
+                "add_flag",
+                "api",
+                "flag"
+            ],
+            [
+                "change_flag",
+                "api",
+                "flag"
+            ],
+            [
+                "delete_flag",
+                "api",
+                "flag"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "pushing",
+        "permissions": [
+            [
+                "add_feature",
+                "api",
+                "feature"
+            ],
+            [
+                "add_property",
+                "api",
+                "property"
+            ]
+        ]
+    }
+}
+]
+
