@@ -4,7 +4,8 @@ from django.conf import settings
 
 FOR_SALE = 'F'
 SOLD = 'S'
-LISTING_OPTIONS = ((FOR_SALE, 'For Sale'), (SOLD, 'Sold'))
+APPRAISED = 'A'
+LISTING_OPTIONS = ((FOR_SALE, 'For Sale'), (SOLD, 'Sold'), (APPRAISED, 'Appraised'))
 
 METRIC = 'M'
 IMPERIAL = 'I'
