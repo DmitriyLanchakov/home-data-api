@@ -20,13 +20,47 @@ Endpoints
 
 Admin
 ^^^^^
-Current endpoints are accessible to all users, however a system for registering
-an account and using these details to obtain a JSON Web Token (JWT) will be 
-added in an upcoming release. 
+All current endpoints are public to GET requests but require a token for any 
+POST requests. This system utilises JSON Web Tokens (JWTs) for authentication.
+There are three main endpoints for getting, refreshing and verifying a web token.
 
-*Note that until this admin interface is in place there are no gaurentees that
-data will persist. If you are pushing data please keep backup*
+Tokens are valid for a period of 5 minuets (300 seconds). A token can be refreshed
+any time in the 7 day period after it was issued or last refreshed. Once this
+period has passed a new token must be obtained from the `/token/auth/` endpoint.
 
+Getting a token - `/token/auth/`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To get a new token post your username and password to the `/token/auth` endpoint.
+If you are hosting a copy of this API yourself you should try and ensure you use
+a https connection so the data is not sent in plain text.::
+    
+    $ curl -X POST -H "Content-Type: application/json" \
+        -d '{"username":"<your username>", "password":"<your password>"}'
+    {
+        "token": "<your token>"
+    }
+
+You can now use this token with other requests by adding the header `Authorization: Bearer <your token>`.
+
+Refreshing a token - `/token/refresh/`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once a token has expired it can be renewed for a new token by posting to the
+`/token/refresh/` endpoint.::
+
+    $ curl -X POST -H "Content-Type: application/json" \
+        -d '{"token": "<your existing token>"}'
+    {
+        "token": "<a new token>"
+    }
+
+Verifying a token - `/token/verify/`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To check if a token has expired you can post to the `/token/verify/` endpoint.
+If your token is still valid the server will return a `200 OK` status. If the 
+token has expired a `400 BAD REQUEST` will be returned instead.::
+
+    $ curl -X POST -H "Content-Type: application/json" \
+        -d '{"token": "<your token>"}'
 
 Properties
 ^^^^^^^^^^
@@ -95,6 +129,7 @@ Creating a new feature is performed with a `POST` request to the endpoint. *See
 the note above about the future of this option.*::
 
     $ curl -X POST -H 'Content-Type: application/json' \
+        -H 'Authorization: Bearer <your_token>'
         -d '{"category":"Outdoor", "tag":"Garden"}' \
         https://home-sales-data-api.herokuapp.com/api/feature/
     {

@@ -11,6 +11,7 @@ Contents:
 
    modules/models
    modules/views
+   modules/filters
 
 
 
