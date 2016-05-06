@@ -24,6 +24,7 @@ $ pip install -r requirements.txt
 $ cd homes
 $ python manage.py migrate --settings=homes.settings_local
 $ python manage.py loaddata api/fixtures/groups.json --settings=homes.settings_local
+$ python manage.py createsuperuser --settings=homes.settings_local
 $ python manage.py runserver --settings=homes.settings_local
 ```
 
