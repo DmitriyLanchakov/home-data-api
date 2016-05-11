@@ -63,7 +63,7 @@ class Property(models.Model):
     size_units = models.CharField(max_length=1, choices=UNITS_OPTIONS)
 
     raw_address = models.CharField(max_length=512)
-    geocoded_address = models.CharField(max_length=512)
+    geocoded_address = models.CharField(max_length=512, blank=True, null=True)
 
     features = models.ManyToManyField('Feature', blank=True)
 
@@ -80,7 +80,7 @@ class Property(models.Model):
         This is limited to 2500 requests per day. There is no current system
         to account for this so models over 2500 will not geocode.
         """
-        if self.valid and not settings.TESTING:
+        if self.valid and not settings.TESTING and len(self.geocoded_address) == 0:
             encoder = GoogleV3()
             location = encoder.geocode(self.raw_address)
             self.geocoded_address = location.address
