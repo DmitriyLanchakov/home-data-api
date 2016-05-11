@@ -1,17 +1,29 @@
 from api.serializers import (PropertySerializer, FeatureSerializer,
-                             FlagSerializer, ResolutionSerializer)
+                             FlagSerializer, ResolutionSerializer,
+                             UserSerializer)
 from api.filters import PropertyFilter
 from api.models import (Property, Feature, Flag, Resolution)
+from django.contrib.auth import get_user_model
+from api.permissions import SignUpPermission
 
-from rest_framework import viewsets, filters
-from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
+from rest_framework import viewsets, filters, mixins
+
+class UserViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    """Allows a user to sign up by pushing data to this endpoint.
+    
+    This will also fail for an authenticated user.
+
+    Data to push is username, password, first_name, last_name, email
+    """
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (SignUpPermission,)
 
 class PropertyViewSet(viewsets.ModelViewSet):
     """Allows the read and write of Property objects.
     """
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
-    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = PropertyFilter
 
@@ -21,7 +33,6 @@ class FeatureViewSet(viewsets.ModelViewSet):
     """
     queryset = Feature.objects.all()
     serializer_class = FeatureSerializer
-    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 
 class FlagViewSet(viewsets.ModelViewSet):
@@ -29,7 +40,6 @@ class FlagViewSet(viewsets.ModelViewSet):
     """
     queryset = Flag.objects.all()
     serializer_class = FlagSerializer
-    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 
 class ResolutionViewSet(viewsets.ModelViewSet):
@@ -37,6 +47,5 @@ class ResolutionViewSet(viewsets.ModelViewSet):
     """
     queryset = Resolution.objects.all()
     serializer_class = ResolutionSerializer
-    permission_classes = (DjangoModelPermissionsOrAnonReadOnly,)
 
 

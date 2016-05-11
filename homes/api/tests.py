@@ -22,6 +22,9 @@ class AnonTests(APITestCase):
                 password="test",
                 email="test@test.com")
 
+        user.profile.confirmed = True
+        user.profile.save()
+
         prop = Property.objects.create(
                 listing_timestamp=timezone.now(),
                 listing_type=FOR_SALE,
@@ -247,6 +250,9 @@ class PushGroupTests(APITestCase):
         push_group = Group.objects.get(name="pushing")
         user.groups.add(push_group)
         user.save()
+
+        user.profile.confirmed = True
+        user.profile.save()
 
         # Bust the permissions cache
         user = get_user_model().objects.get(pk=user.pk)
@@ -479,6 +485,10 @@ class FlaggingGroupTests(APITestCase):
                 password="test",
                 email="test@test.com")
 
+        user.profile.confirmed = True
+        user.profile.save()
+
+        # Bust the permissions cache
         flagging_group = Group.objects.get(name="flagging")
         user.groups.add(flagging_group)
         user.save()

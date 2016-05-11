@@ -1,6 +1,8 @@
 from django.db import models
 from geopy.geocoders import GoogleV3
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 FOR_SALE = 'F'
 SOLD = 'S'
@@ -14,6 +16,24 @@ UNITS_OPTIONS = ((METRIC, 'metric'), (IMPERIAL, 'imperial'))
 FLAG_EXACT = 'E'
 FLAG_SIMILAR = 'S'
 FLAG_OPTIONS = ((FLAG_EXACT, 'exact duplicate'), (FLAG_SIMILAR, 'merge candidate'))
+
+class Profile(models.Model):
+    """ Profile object to store extended data about the user.
+    """
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, 
+            on_delete=models.CASCADE)
+    confirmed = models.BooleanField(default=False)
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_profile(sender, instance, **kwargs):
+    if kwargs['created']:
+        profile = Profile.objects.create(user=instance)
+    else:
+        profile = Profile.objects.filter(user=instance)
+        if len(profile) == 0:
+            profile = Profile.objects.create(user=instance)
+
 
 class Property(models.Model):
     """ A Property object representing a snapshot of a property at a point in
