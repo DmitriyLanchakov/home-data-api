@@ -1,6 +1,13 @@
 from django.db import models
 from geopy.geocoders import GoogleV3
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.utils import timezone
+from api.util import send_signup_email
+import datetime
+import random
+import string
 
 FOR_SALE = 'F'
 SOLD = 'S'
@@ -14,6 +21,58 @@ UNITS_OPTIONS = ((METRIC, 'metric'), (IMPERIAL, 'imperial'))
 FLAG_EXACT = 'E'
 FLAG_SIMILAR = 'S'
 FLAG_OPTIONS = ((FLAG_EXACT, 'exact duplicate'), (FLAG_SIMILAR, 'merge candidate'))
+
+class Profile(models.Model):
+    """ Profile object to store extended data about the user.
+    """
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, 
+            on_delete=models.CASCADE)
+    confirmed = models.BooleanField(default=False)
+
+    confirmation_code = models.CharField(max_length=512)
+    confirmation_date = models.DateTimeField(auto_now=True)
+
+    def update_code(self):
+        """Generate a new email confirmation code.
+        """
+        self.confirmation_code = ''.join([random.choice(string.ascii_uppercase) 
+                                          for _ in range(254)])
+        self.confirmation_date = timezone.now()
+        self.save()
+
+    def get_confirmation_link(self):
+        """Generate a url for confirming the account.
+
+        This generates the relative uri and should be appended to the hostname.
+        """
+        return "/confirm/" + str(self.pk) + "/" + self.confirmation_code + "/"
+
+    def can_confirm(self):
+        """Can the user be confirmed?
+
+        return true if the user is unconfirmed and the code is still valid
+        """
+        return (not self.confirmed) and (timezone.now() < self.confirmation_date + datetime.timedelta(days=2))
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_profile(sender, instance, **kwargs):
+    new_account = False
+    if kwargs['created']:
+        profile = Profile.objects.create(user=instance)
+        new_account = True
+    else:
+        profile = Profile.objects.filter(user=instance)
+        if len(profile) == 0:
+            profile = Profile.objects.create(user=instance)
+            new_account = True
+
+    if new_account:
+        profile.update_code()
+        link_text = settings.HOSTNAME + profile.get_confirmation_link()
+        if not settings.TESTING:
+            send_signup_email(instance.email, link_text)
+
 
 class Property(models.Model):
     """ A Property object representing a snapshot of a property at a point in
@@ -43,7 +102,7 @@ class Property(models.Model):
     size_units = models.CharField(max_length=1, choices=UNITS_OPTIONS)
 
     raw_address = models.CharField(max_length=512)
-    geocoded_address = models.CharField(max_length=512)
+    geocoded_address = models.CharField(max_length=512, blank=True, null=True)
 
     features = models.ManyToManyField('Feature', blank=True)
 
@@ -60,7 +119,7 @@ class Property(models.Model):
         This is limited to 2500 requests per day. There is no current system
         to account for this so models over 2500 will not geocode.
         """
-        if self.valid and not settings.TESTING:
+        if self.valid and not settings.TESTING and len(self.geocoded_address) == 0:
             encoder = GoogleV3()
             location = encoder.geocode(self.raw_address)
             self.geocoded_address = location.address

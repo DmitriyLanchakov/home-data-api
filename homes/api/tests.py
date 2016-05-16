@@ -22,6 +22,9 @@ class AnonTests(APITestCase):
                 password="test",
                 email="test@test.com")
 
+        user.profile.confirmed = True
+        user.profile.save()
+
         prop = Property.objects.create(
                 listing_timestamp=timezone.now(),
                 listing_type=FOR_SALE,
@@ -49,7 +52,7 @@ class AnonTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_property(self):
         """Anonymous users should not be able to POST new properties.
@@ -100,7 +103,7 @@ class AnonTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_feature(self):
         """Anonymous users should not be able to POST new features.
@@ -147,7 +150,7 @@ class AnonTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_flag(self):
         """Anonymous users should not be able to POST new flags.
@@ -192,7 +195,7 @@ class AnonTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_resolution(self):
         """Anonymous users should not be able to POST new resolutions.
@@ -248,6 +251,9 @@ class PushGroupTests(APITestCase):
         user.groups.add(push_group)
         user.save()
 
+        user.profile.confirmed = True
+        user.profile.save()
+
         # Bust the permissions cache
         user = get_user_model().objects.get(pk=user.pk)
 
@@ -280,7 +286,7 @@ class PushGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_property(self):
         """Push Group users should be able to POST new properties.
@@ -335,7 +341,7 @@ class PushGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_feature(self):
         """Push Group users should be able to POST new features.
@@ -382,7 +388,7 @@ class PushGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_flag(self):
         """Push Group users should not be able to POST new flags.
@@ -427,7 +433,7 @@ class PushGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_resolution(self):
         """Push Group users should not be able to POST new resolutions.
@@ -479,6 +485,10 @@ class FlaggingGroupTests(APITestCase):
                 password="test",
                 email="test@test.com")
 
+        user.profile.confirmed = True
+        user.profile.save()
+
+        # Bust the permissions cache
         flagging_group = Group.objects.get(name="flagging")
         user.groups.add(flagging_group)
         user.save()
@@ -518,7 +528,7 @@ class FlaggingGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_property(self):
         """Flagging Group users should not be able to POST new properties.
@@ -573,7 +583,7 @@ class FlaggingGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_feature(self):
         """Flagging Group users should not be able to POST new features.
@@ -620,7 +630,7 @@ class FlaggingGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_flag(self):
         """Flagging Group users should be able to POST new flags.
@@ -692,7 +702,7 @@ class FlaggingGroupTests(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        self.assertEqual(len(response.data['results']), 1)
 
     def test_write_resolution(self):
         """Flagging Group users should not be able to POST new resolutions.
