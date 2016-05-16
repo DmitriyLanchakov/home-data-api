@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from api.views import (PropertyViewSet, FeatureViewSet, FlagViewSet, 
-                       ResolutionViewSet, UserViewSet)
+                       ResolutionViewSet, UserViewSet, confirm_code)
 from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
@@ -34,4 +34,5 @@ urlpatterns = [
     url(r'^token/auth/', obtain_jwt_token),
     url(r'^token/refresh/', refresh_jwt_token),
     url(r'^token/verify/', verify_jwt_token),
+    url(r'^confirm/(?P<id>[0-9]+)/(?P<code>[A-Z]+)/', confirm_code)
 ]

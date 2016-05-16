@@ -25,6 +25,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'INVALID')
 
+HOSTNAME = os.environ.get('HOSTNAME', 'localhost:8000')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -35,6 +36,9 @@ if os.environ.get('DJANGO_DEBUG'):
 
 ALLOWED_HOSTS = ['*']
 
+MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY', '')
+MAILGUN_DOMAIN = os.environ.get('MAILGUN_DOMAIN', '')
+MAILGUN_API_FROM = os.environ.get('MAILGUN_API_FROM', 'data-skeptic@mg.justrun.io')
 
 # Application definition
 
