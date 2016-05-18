@@ -26,7 +26,7 @@ class UserConfirmedPermission(permissions.BasePermission):
             return True
 
         if request.user.is_authenticated():
-            return request.user.profile.confirmed
+            return request.user.profile.confirmed or request.user.is_superuser
         else:
             return False
 
@@ -35,6 +35,6 @@ class UserConfirmedPermission(permissions.BasePermission):
             return True
 
         if request.user.is_authenticated():
-            return request.user.profile.confirmed
+            return request.user.profile.confirmed or request.user.is_superuser
         else:
             return False
