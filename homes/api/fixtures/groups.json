@@ -38,6 +38,11 @@
                 "add_property",
                 "api",
                 "property"
+            ],
+            [
+                "add_address",
+                "api",
+                "address"
             ]
         ]
     }

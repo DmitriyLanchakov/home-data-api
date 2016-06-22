@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Property, Feature, Flag, Resolution
+from api.models import Address, Property, Feature, Flag, Resolution
 from django.contrib.auth import get_user_model
 from django.conf import settings
 
@@ -27,9 +27,17 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
+        fields = '__all__'
+
+
 class PropertySerializer(serializers.ModelSerializer):
     submitter = serializers.PrimaryKeyRelatedField(read_only=True, 
             default=serializers.CurrentUserDefault())
+    address_object = AddressSerializer(read_only=True)
     class Meta:
         model = Property
         fields = '__all__'

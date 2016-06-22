@@ -8,6 +8,7 @@ from api.util import send_signup_email
 import datetime
 import random
 import string
+import requests
 
 FOR_SALE = 'F'
 SOLD = 'S'
@@ -74,6 +75,55 @@ def create_profile(sender, instance, **kwargs):
             send_signup_email(instance.email, link_text)
 
 
+class Address(models.Model):
+    raw = models.CharField(max_length=2048)
+    subpremise = models.IntegerField(null=True, blank=True)
+    street_number = models.IntegerField()
+    route = models.CharField(max_length=512)
+    locality = models.CharField(max_length=512)
+    area_level_2 = models.CharField(max_length=512)
+    area_level_1 = models.CharField(max_length=512)
+    country = models.CharField(max_length=128)
+    postal_code = models.CharField(max_length=50)
+    formatted_address = models.CharField(max_length=1000)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+
+
+    def from_google_json(self, json):
+        json = json['results'][0]
+        for part in json['address_components']:
+            if 'subpremise' in part['types']:
+                self.subpremise = part['long_name']
+                continue
+            if 'street_number' in part['types']:
+                self.street_number = part['long_name']
+                continue
+            if 'route' in part['types']:
+                self.route = part['long_name']
+                continue
+            if 'locality' in part['types']:
+                self.locality = part['long_name']
+                continue
+            if 'administrative_area_level_2' in part['types']:
+                self.area_level_2 = part['long_name']
+                continue
+            if 'administrative_area_level_1' in part['types']:
+                self.area_level_1 = part['long_name']
+                continue
+            if 'country' in part['types']:
+                self.country = part['long_name']
+                continue
+            if 'postal_code' in part['types']:
+                self.postal_code = part['long_name']
+                continue
+
+        self.formatted_address = json['formatted_address']
+
+        self.latitude = json['geometry']['location']['lat']
+        self.longitude = json['geometry']['location']['lng']
+
+
 class Property(models.Model):
     """ A Property object representing a snapshot of a property at a point in
     time.
@@ -102,7 +152,7 @@ class Property(models.Model):
     size_units = models.CharField(max_length=1, choices=UNITS_OPTIONS)
 
     raw_address = models.CharField(max_length=512)
-    geocoded_address = models.CharField(max_length=512, blank=True, null=True)
+    address_object = models.ForeignKey(Address, blank=True, null=True)
 
     features = models.ManyToManyField('Feature', blank=True)
 
@@ -119,10 +169,17 @@ class Property(models.Model):
         This is limited to 2500 requests per day. There is no current system
         to account for this so models over 2500 will not geocode.
         """
-        if self.valid and not settings.TESTING and len(self.geocoded_address) == 0:
-            encoder = GoogleV3()
-            location = encoder.geocode(self.raw_address)
-            self.geocoded_address = location.address
+        if not settings.TESTING:
+            response = requests.get(
+                    'https://maps.googleapis.com/maps/api/geocode/json',
+                    params={'address': self.raw_address,
+                            'key': settings.G_APPS_KEY})
+            if response.status_code == 200:
+                address = Address()
+                address.raw = response.text
+                address.from_google_json(response.json())
+                address.save()
+                self.address_object = address
         super(Property, self).save(*args, **kwargs)
 
 

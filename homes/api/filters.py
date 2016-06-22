@@ -58,13 +58,11 @@ class PropertyFilter(filters.FilterSet):
     min_car_spaces = django_filters.NumberFilter(name="car_spaces", lookup_type="gte")
     max_car_spaces = django_filters.NumberFilter(name="car_spaces", lookup_type="lte")
 
-    address_contains = django_filters.CharFilter(name="geocoded_address", lookup_type="contains")
-
     class Meta:
         model = Property
         fields = ["min_price", "max_price", "min_bedrooms", "max_bedrooms", 
                 "min_bathrooms", "max_bathrooms", "min_car_spaces", "max_car_spaces",
-                "features", "address_contains"]
+                "features"]
 
 
 

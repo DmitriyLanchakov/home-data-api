@@ -1,8 +1,8 @@
 from api.serializers import (PropertySerializer, FeatureSerializer,
                              FlagSerializer, ResolutionSerializer,
-                             UserSerializer)
+                             UserSerializer, AddressSerializer)
 from api.filters import PropertyFilter
-from api.models import (Property, Feature, Flag, Resolution, Profile)
+from api.models import (Property, Feature, Flag, Resolution, Profile, Address)
 from api.permissions import SignUpPermission
 
 from django.contrib.auth import get_user_model
@@ -21,6 +21,12 @@ class UserViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
     permission_classes = (SignUpPermission,)
+
+
+class AddressViewSet(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+
 
 class PropertyViewSet(viewsets.ModelViewSet):
     """Allows the read and write of Property objects.

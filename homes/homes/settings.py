@@ -27,6 +27,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'INVALID')
 
 HOSTNAME = os.environ.get('HOSTNAME', 'localhost:8000')
 
+G_APPS_KEY = os.environ.get('G_APPS_KEY', '')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 TESTING = False
