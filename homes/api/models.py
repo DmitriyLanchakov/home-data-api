@@ -76,7 +76,7 @@ def create_profile(sender, instance, **kwargs):
 
 
 class Address(models.Model):
-    raw = models.CharField(max_length=2048)
+    raw = models.TextField()
     subpremise = models.IntegerField(null=True, blank=True)
     street_number = models.IntegerField()
     route = models.CharField(max_length=512)
@@ -85,7 +85,7 @@ class Address(models.Model):
     area_level_1 = models.CharField(max_length=512)
     country = models.CharField(max_length=128)
     postal_code = models.CharField(max_length=50)
-    formatted_address = models.CharField(max_length=1000)
+    formatted_address = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()
 
