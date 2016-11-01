@@ -6,6 +6,7 @@ from api.models import (Property, Feature, Flag, Resolution, Profile, Address)
 from api.permissions import SignUpPermission
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Group
 from rest_framework import viewsets, filters, mixins, status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -76,6 +77,8 @@ def confirm_code(request, id, code):
     if profile.can_confirm():
         profile.confirmed = True
         profile.save()
+        g = Group.objects.get(name='pushing')
+        g.user_set.add(profile.user)
         return Response({"message":"OK"})
     else:
         return Response({"message":"Confirmation Code Expired or Account already Active"},
